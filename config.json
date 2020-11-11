@@ -1,0 +1,51 @@
+{
+    "useProxy": true,
+    "serverPort": 3000,
+    "serverHost": "0.0.0.0",
+    "endpoints": [
+        {
+            "path": "/",
+            "delay": 1000
+        },
+        {
+            "path": "/greeting",
+            "rate": 10,
+            "status": 200,
+            "cors": true,
+            "response": "greeting.json"
+        },
+        {
+            "path": "/test",
+            "method": "post",
+            "delay": 2000,
+            "status": 500,
+            "cors": true,
+            "response": "finished.json"
+        },
+        {
+            "path": "/cdpws-corporateaction/v1/verify-corporate-election-sender",
+            "method": "post",
+            "delay": 200,
+            "response": "verifyCorporateElectionSender.json",
+            "headers": {
+                "x-verify-corporate-action-token": "dummyToken"
+            }
+        },
+        {
+            "path": "/cdpws-corporateaction/v1/electionInstruction",
+            "method": "put",
+            "delay": { "min": 600, "max": 6000},
+            "response": "electionInstruction.json"
+        },
+        {
+            "path": "/random",
+            "delay": { "min": 1000, "max": 5000 },
+            "response": "random.js"
+        },
+        {
+            "path": "/JsonRead/JsonstData",
+            "delay": { "min": 500, "max": 2000 },
+            "proxy": "https://api3.sgx.com"
+        }
+    ]
+}
