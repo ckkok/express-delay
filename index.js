@@ -1,18 +1,20 @@
-import express from 'express';
 import http from 'http';
 import fs from 'fs';
 import path from 'path';
 import cors from 'cors';
-import url from 'url';
+import JSON5 from 'json5';
+import express from 'express';
 import expressProxy from 'express-http-proxy';
 import rateLimit from 'express-rate-limit';
 import globalAgent from 'global-agent';
 import { fileURLToPath, pathToFileURL } from 'url';
 
+globalThis.JSON = JSON5;
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const config = JSON.parse(fs.readFileSync("config.json", "utf-8"));
+const config = JSON.parse(fs.readFileSync("config.json5", "utf-8"));
 
 if (config.useProxy) {
     globalAgent.bootstrap();
@@ -22,7 +24,18 @@ if (config.useProxy) {
 const SERVER_SHUTDOWN_TIMEOUT = 5000;
 const SERVER_PORT = process.env.PORT ? parseInt(process.env.PORT) : (config.serverPort ? config.serverPort : 3000);
 const SERVER_HOST = process.env.HOST ? process.env.HOST : (config.serverHost ? config.serverHost : '0.0.0.0');
+const CONSOLE_OUTPUT_ENABLED = config.consoleOutput;
 const INIT_MSG = `Mock server listening at ${SERVER_HOST}:${SERVER_PORT}` + (config.useProxy ? `\n\nUsing proxy: ${globalThis.GLOBAL_AGENT.HTTP_PROXY}` : '');
+
+function logServerState() {
+    console.clear();
+    console.log(INIT_MSG);
+    console.log('\nServer state');
+    if (globalThis.SERVER_STATE) {
+        console.table(globalThis.SERVER_STATE);
+    };
+    logMetrics();
+}
 
 globalThis.SERVER_STATE = {
     stateId: 0,
@@ -30,64 +43,60 @@ globalThis.SERVER_STATE = {
     simulateFail: 0
 }
 
-function logServerState() {
-    console.clear();
-    console.log(INIT_MSG);
-    console.log('\nServer state');
-    console.table(globalThis.SERVER_STATE);
-    logMetrics();
-}
-
-const keyResponses = {
-    "\u0003": shutdown,
-    "\u001B\u005B\u0041": () => {
-        globalThis.SERVER_STATE.delayFactor = parseFloat((globalThis.SERVER_STATE.delayFactor + 0.1).toFixed(2));
-        logServerState();
-    },
-    "\u001B\u005B\u0042": () => {
-        globalThis.SERVER_STATE.delayFactor = parseFloat((globalThis.SERVER_STATE.delayFactor - 0.1).toFixed(2));
-        if (globalThis.SERVER_STATE.delayFactor < 0) {
-            globalThis.SERVER_STATE.delayFactor = 0;
-        }
-        logServerState();
-    },
-    "\u001B\u005B\u0043": () => {
-        globalThis.SERVER_STATE.simulateFail = parseFloat((globalThis.SERVER_STATE.simulateFail + 0.1).toFixed(2));
-        if (globalThis.SERVER_STATE.simulateFail > 1) {
-            globalThis.SERVER_STATE.simulateFail = 1;
-        }
-        logServerState();
-    },
-    "\u001B\u005B\u0044": () => {
-        globalThis.SERVER_STATE.simulateFail = parseFloat((globalThis.SERVER_STATE.simulateFail - 0.1).toFixed(2));
-        if (globalThis.SERVER_STATE.simulateFail < 0) {
-            globalThis.SERVER_STATE.simulateFail = 0;
-        }
-        logServerState();
-    },
-    "\u001B\u005B\u0035\u007e": () => {
-        ++globalThis.SERVER_STATE.stateId;
-        logServerState();
-    },
-    "\u001B\u005B\u0036\u007e": () => {
-        --globalThis.SERVER_STATE.stateId;
-        if (globalThis.SERVER_STATE.stateId < 0) {
-            globalThis.SERVER_STATE.stateId = 0;
-        }
-        logServerState();
-    },
-}
-
-const stdin = process.stdin;
-stdin.setRawMode(true);
-stdin.setEncoding('utf8');
-stdin.on('data', key => {
-    if (keyResponses.hasOwnProperty(key)) {
-        keyResponses[key]();
+if (config.consoleAccess) {
+    const keyResponses = {
+        "\u0003": shutdown,
+        "\u001B\u005B\u0041": () => {
+            globalThis.SERVER_STATE.delayFactor = parseFloat((globalThis.SERVER_STATE.delayFactor + 0.1).toFixed(2));
+            logServerState();
+        },
+        "\u001B\u005B\u0042": () => {
+            globalThis.SERVER_STATE.delayFactor = parseFloat((globalThis.SERVER_STATE.delayFactor - 0.1).toFixed(2));
+            if (globalThis.SERVER_STATE.delayFactor < 0) {
+                globalThis.SERVER_STATE.delayFactor = 0;
+            }
+            logServerState();
+        },
+        "\u001B\u005B\u0043": () => {
+            globalThis.SERVER_STATE.simulateFail = parseFloat((globalThis.SERVER_STATE.simulateFail + 0.1).toFixed(2));
+            if (globalThis.SERVER_STATE.simulateFail > 1) {
+                globalThis.SERVER_STATE.simulateFail = 1;
+            }
+            logServerState();
+        },
+        "\u001B\u005B\u0044": () => {
+            globalThis.SERVER_STATE.simulateFail = parseFloat((globalThis.SERVER_STATE.simulateFail - 0.1).toFixed(2));
+            if (globalThis.SERVER_STATE.simulateFail < 0) {
+                globalThis.SERVER_STATE.simulateFail = 0;
+            }
+            logServerState();
+        },
+        "\u001B\u005B\u0035\u007e": () => {
+            ++globalThis.SERVER_STATE.stateId;
+            logServerState();
+        },
+        "\u001B\u005B\u0036\u007e": () => {
+            --globalThis.SERVER_STATE.stateId;
+            if (globalThis.SERVER_STATE.stateId < 0) {
+                globalThis.SERVER_STATE.stateId = 0;
+            }
+            logServerState();
+        },
     }
-});
+    
+    const stdin = process.stdin;
+    stdin.setRawMode(true);
+    stdin.setEncoding('utf8');
+    stdin.on('data', key => {
+        if (keyResponses.hasOwnProperty(key)) {
+            keyResponses[key]();
+        }
+    });
+}
 
 const app = express();
+const router = express.Router();
+
 app.enable('trust proxy');
 
 const jsonMiddleware = express.json();
@@ -142,15 +151,24 @@ const registerMetrics = (endpoint, method) => {
 
 const rpsReportHandler = (req, res, next) => {
     const method = req.method;
-    const pathname = url.parse(req.url).pathname;
+    const pathname = req.route.path;
     if (__REQ_BUCKETS[pathname]) {
         ++__REQ_BUCKETS[pathname][method].buckets[__REQ_BUCKET_INDEX];
         ++__REQ_BUCKETS[pathname][method].count;
     }
     next();
 }
-
-app.use(rpsReportHandler);
+if (config.dashboardPath) {
+    app.use(config.dashboardPath, express.static('dashboard'));
+    app.get(config.dashboardPath + '/data', (req, res) => res.json(config));
+    app.get(config.dashboardPath + '/logs', (req, res) => res.json([]));
+    app.post(config.dashboardPath + '/data', (req, res) => res.end());
+    app.post(config.dashboardPath + '/restart', (req, res) => res.end());
+}
+app.use(express.text());
+app.use(express.json());
+app.use(express.urlencoded());
+app.get(config.isAliveEndpoint, (req, res) => res.end());
 
 const server = http.createServer(app);
 
@@ -236,239 +254,252 @@ const registerEndpoints = async () => {
             const handler = await handlerResponseFactory(responseFile);
             if (handler.get) {
                 registerMetrics(endpoint.path, 'GET');
+                router.get(endpoint.path, rpsReportHandler);
                 if (isCorsEnabled) {
-                    app.get(endpoint.path, corsHandler);
+                    router.get(endpoint.path, corsHandler);
                 }
                 if (rate) {
-                    app.get(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
+                    router.get(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
                 }
                 if (delay || (typeof delay === 'number' && delay > 0) ) {
-                    app.get(endpoint.path, delayHandlerFactory(delay));
+                    router.get(endpoint.path, delayHandlerFactory(delay));
                 }
-                app.get(endpoint.path, jsonMiddleware);
-                app.get(endpoint.path, urlEncodedMiddleware);
-                app.get(endpoint.path, rawMiddleware);
-                app.get(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
-                app.get(endpoint.path, failSimulationHandler);
-                app.get(endpoint.path, handler.get);
+                router.get(endpoint.path, jsonMiddleware);
+                router.get(endpoint.path, urlEncodedMiddleware);
+                router.get(endpoint.path, rawMiddleware);
+                router.get(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
+                router.get(endpoint.path, failSimulationHandler);
+                router.get(endpoint.path, handler.get);
             }
             if (handler.post) {
                 registerMetrics(endpoint.path, 'POST');
+                router.post(endpoint.path, rpsReportHandler);
                 if (isCorsEnabled) {
-                    app.post(endpoint.path, corsHandler);
+                    router.post(endpoint.path, corsHandler);
                 }
                 if (rate) {
-                    app.post(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
+                    router.post(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
                 }
                 if (delay || (typeof delay === 'number' && delay > 0) ) {
-                    app.post(endpoint.path, delayHandlerFactory(delay));
+                    router.post(endpoint.path, delayHandlerFactory(delay));
                 }
-                app.post(endpoint.path, jsonMiddleware);
-                app.post(endpoint.path, urlEncodedMiddleware);
-                app.post(endpoint.path, rawMiddleware);
-                app.post(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
-                app.post(endpoint.path, failSimulationHandler);
-                app.post(endpoint.path, handler.post);
+                router.post(endpoint.path, jsonMiddleware);
+                router.post(endpoint.path, urlEncodedMiddleware);
+                router.post(endpoint.path, rawMiddleware);
+                router.post(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
+                router.post(endpoint.path, failSimulationHandler);
+                router.post(endpoint.path, handler.post);
             }
             if (handler.put) {
                 registerMetrics(endpoint.path, 'PUT');
+                router.put(endpoint.path, rpsReportHandler);
                 if (isCorsEnabled) {
-                    app.put(endpoint.path, corsHandler);
+                    router.put(endpoint.path, corsHandler);
                 }
                 if (rate) {
-                    app.put(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
+                    router.put(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
                 }
                 if (delay || (typeof delay === 'number' && delay > 0) ) {
-                    app.put(endpoint.path, delayHandlerFactory(delay));
+                    router.put(endpoint.path, delayHandlerFactory(delay));
                 }
-                app.put(endpoint.path, jsonMiddleware);
-                app.put(endpoint.path, urlEncodedMiddleware);
-                app.put(endpoint.path, rawMiddleware);
-                app.put(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
-                app.put(endpoint.path, failSimulationHandler);
-                app.put(endpoint.path, handler.put);
+                router.put(endpoint.path, jsonMiddleware);
+                router.put(endpoint.path, urlEncodedMiddleware);
+                router.put(endpoint.path, rawMiddleware);
+                router.put(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
+                router.put(endpoint.path, failSimulationHandler);
+                router.put(endpoint.path, handler.put);
             }
             if (handler.patch) {
                 registerMetrics(endpoint.path, 'PATCH');
+                router.patch(endpoint.path, rpsReportHandler);
                 if (isCorsEnabled) {
-                    app.patch(endpoint.path, corsHandler);
+                    router.patch(endpoint.path, corsHandler);
                 }
                 if (rate) {
-                    app.patch(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
+                    router.patch(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
                 }
                 if (delay || (typeof delay === 'number' && delay > 0) ) {
-                    app.patch(endpoint.path, delayHandlerFactory(delay));
+                    router.patch(endpoint.path, delayHandlerFactory(delay));
                 }
-                app.patch(endpoint.path, jsonMiddleware);
-                app.patch(endpoint.path, urlEncodedMiddleware);
-                app.patch(endpoint.path, rawMiddleware);
-                app.patch(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
-                app.patch(endpoint.path, failSimulationHandler);
-                app.patch(endpoint.path, handler.patch);
+                router.patch(endpoint.path, jsonMiddleware);
+                router.patch(endpoint.path, urlEncodedMiddleware);
+                router.patch(endpoint.path, rawMiddleware);
+                router.patch(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
+                router.patch(endpoint.path, failSimulationHandler);
+                router.patch(endpoint.path, handler.patch);
             }
             if (handler.delete) {
                 registerMetrics(endpoint.path, 'DELETE');
+                router.delete(endpoint.path, rpsReportHandler);
                 if (isCorsEnabled) {
-                    app.delete(endpoint.path, corsHandler);
+                    router.delete(endpoint.path, corsHandler);
                 }
                 if (rate) {
-                    app.delete(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
+                    router.delete(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
                 }
                 if (delay || (typeof delay === 'number' && delay > 0) ) {
-                    app.delete(endpoint.path, delayHandlerFactory(delay));
+                    router.delete(endpoint.path, delayHandlerFactory(delay));
                 }
-                app.delete(endpoint.path, jsonMiddleware);
-                app.delete(endpoint.path, urlEncodedMiddleware);
-                app.delete(endpoint.path, rawMiddleware);
-                app.delete(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
-                app.delete(endpoint.path, failSimulationHandler);
-                app.delete(endpoint.path, handler.delete);
+                router.delete(endpoint.path, jsonMiddleware);
+                router.delete(endpoint.path, urlEncodedMiddleware);
+                router.delete(endpoint.path, rawMiddleware);
+                router.delete(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
+                router.delete(endpoint.path, failSimulationHandler);
+                router.delete(endpoint.path, handler.delete);
             }
         } else {
             if (method === 'get') {
                 registerMetrics(endpoint.path, 'GET');
+                router.get(endpoint.path, rpsReportHandler);
                 if (isCorsEnabled) {
-                    app.get(endpoint.path, corsHandler);
+                    router.get(endpoint.path, corsHandler);
                 }
                 if (rate) {
-                    app.get(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
+                    router.get(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
                 }
                 if (delay || (typeof delay === 'number' && delay > 0) ) {
-                    app.get(endpoint.path, delayHandlerFactory(delay));
+                    router.get(endpoint.path, delayHandlerFactory(delay));
                 }
                 if (!proxy) {
-                    app.get(endpoint.path, jsonMiddleware);
-                    app.get(endpoint.path, urlEncodedMiddleware);
-                    app.get(endpoint.path, rawMiddleware);
+                    router.get(endpoint.path, jsonMiddleware);
+                    router.get(endpoint.path, urlEncodedMiddleware);
+                    router.get(endpoint.path, rawMiddleware);
                 }
-                app.get(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
-                app.get(endpoint.path, failSimulationHandler);
+                router.get(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
+                router.get(endpoint.path, failSimulationHandler);
                 if (proxy) {
-                    app.get(endpoint.path, expressProxy(proxy));
+                    router.get(endpoint.path, expressProxy(proxy));
                 } else if (responseFile === null) {
-                    app.get(endpoint.path, nullHandler);
+                    router.get(endpoint.path, nullHandler);
                 } else if (responseFile.endsWith('.json')) {
-                    app.get(endpoint.path, jsonResponseFactory(responseFile));
+                    router.get(endpoint.path, jsonResponseFactory(responseFile));
                 } else if (responseFile.endsWith('.txt') || responseFile.endsWith('.html')) {
-                    app.get(endpoint.path, textResponseFactory(responseFile));
+                    router.get(endpoint.path, textResponseFactory(responseFile));
                 }
             } else if (method === 'post') {
                 registerMetrics(endpoint.path, 'POST');
+                router.post(endpoint.path, rpsReportHandler);
                 if (isCorsEnabled) {
-                    app.post(endpoint.path, corsHandler);
+                    router.post(endpoint.path, corsHandler);
                 }
                 if (rate) {
-                    app.post(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
+                    router.post(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
                 }
                 if (delay || (typeof delay === 'number' && delay > 0) ) {
-                    app.post(endpoint.path, delayHandlerFactory(delay));
+                    router.post(endpoint.path, delayHandlerFactory(delay));
                 }
                 if (!proxy) {
-                    app.post(endpoint.path, jsonMiddleware);
-                    app.post(endpoint.path, urlEncodedMiddleware);
-                    app.post(endpoint.path, rawMiddleware);
+                    router.post(endpoint.path, jsonMiddleware);
+                    router.post(endpoint.path, urlEncodedMiddleware);
+                    router.post(endpoint.path, rawMiddleware);
                 }
-                app.post(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
-                app.post(endpoint.path, failSimulationHandler);
+                router.post(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
+                router.post(endpoint.path, failSimulationHandler);
                 if (proxy) {
-                    app.post(endpoint.path, expressProxy(proxy));
+                    router.post(endpoint.path, expressProxy(proxy));
                 } else if (responseFile === null) {
-                    app.post(endpoint.path, nullHandler);
+                    router.post(endpoint.path, nullHandler);
                 } else if (responseFile.endsWith('.json')) {
-                    app.post(endpoint.path, jsonResponseFactory(responseFile));
+                    router.post(endpoint.path, jsonResponseFactory(responseFile));
                 } else if (responseFile.endsWith('.txt') || responseFile.endsWith('.html')) {
-                    app.post(endpoint.path, textResponseFactory(responseFile));
+                    router.post(endpoint.path, textResponseFactory(responseFile));
                 }
             } else if (method === 'put') {
                 registerMetrics(endpoint.path, 'PUT');
+                router.put(endpoint.path, rpsReportHandler);
                 if (isCorsEnabled) {
-                    app.put(endpoint.path, corsHandler);
+                    router.put(endpoint.path, corsHandler);
                 }
                 if (rate) {
-                    app.put(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
+                    router.put(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
                 }
                 if (delay || (typeof delay === 'number' && delay > 0) ) {
-                    app.put(endpoint.path, delayHandlerFactory(delay));
+                    router.put(endpoint.path, delayHandlerFactory(delay));
                 }
                 if (!proxy) {
-                    app.put(endpoint.path, jsonMiddleware);
-                    app.put(endpoint.path, urlEncodedMiddleware);
-                    app.put(endpoint.path, rawMiddleware);
+                    router.put(endpoint.path, jsonMiddleware);
+                    router.put(endpoint.path, urlEncodedMiddleware);
+                    router.put(endpoint.path, rawMiddleware);
                 }
-                app.put(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
-                app.put(endpoint.path, failSimulationHandler);
+                router.put(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
+                router.put(endpoint.path, failSimulationHandler);
                 if (proxy) {
-                    app.put(endpoint.path, expressProxy(proxy));
+                    router.put(endpoint.path, expressProxy(proxy));
                 } else if (responseFile === null) {
-                    app.put(endpoint.path, nullHandler);
+                    router.put(endpoint.path, nullHandler);
                 } else if (responseFile.endsWith('.json')) {
-                    app.put(endpoint.path, jsonResponseFactory(responseFile));
+                    router.put(endpoint.path, jsonResponseFactory(responseFile));
                 } else if (responseFile.endsWith('.txt') || responseFile.endsWith('.html')) {
-                    app.put(endpoint.path, textResponseFactory(responseFile));
+                    router.put(endpoint.path, textResponseFactory(responseFile));
                 }
             } else if (method === 'patch') {
                 registerMetrics(endpoint.path, 'PATCH');
+                router.patch(endpoint.path, rpsReportHandler);
                 if (isCorsEnabled) {
-                    app.patch(endpoint.path, corsHandler);
+                    router.patch(endpoint.path, corsHandler);
                 }
                 if (rate) {
-                    app.patch(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
+                    router.patch(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
                 }
                 if (delay || (typeof delay === 'number' && delay > 0) ) {
-                    app.patch(endpoint.path, delayHandlerFactory(delay));
+                    router.patch(endpoint.path, delayHandlerFactory(delay));
                 }
                 if (!proxy) {
-                    app.patch(endpoint.path, jsonMiddleware);
-                    app.patch(endpoint.path, urlEncodedMiddleware);
-                    app.patch(endpoint.path, rawMiddleware);
+                    router.patch(endpoint.path, jsonMiddleware);
+                    router.patch(endpoint.path, urlEncodedMiddleware);
+                    router.patch(endpoint.path, rawMiddleware);
                 }
-                app.patch(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
-                app.patch(endpoint.path, failSimulationHandler);
+                router.patch(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
+                router.patch(endpoint.path, failSimulationHandler);
                 if (proxy) {
-                    app.patch(endpoint.path, expressProxy(proxy));
+                    router.patch(endpoint.path, expressProxy(proxy));
                 } else if (responseFile === null) {
-                    app.patch(endpoint.path, nullHandler);
+                    router.patch(endpoint.path, nullHandler);
                 } else if (responseFile.endsWith('.json')) {
-                    app.patch(endpoint.path, jsonResponseFactory(responseFile));
+                    router.patch(endpoint.path, jsonResponseFactory(responseFile));
                 } else if (responseFile.endsWith('.txt') || responseFile.endsWith('.html')) {
-                    app.patch(endpoint.path, textResponseFactory(responseFile));
+                    router.patch(endpoint.path, textResponseFactory(responseFile));
                 }
             } else if (method === 'delete') {
                 registerMetrics(endpoint.path, 'DELETE');
+                router.delete(endpoint.path, rpsReportHandler);
                 if (isCorsEnabled) {
-                    app.delete(endpoint.path, corsHandler);
+                    router.delete(endpoint.path, corsHandler);
                 }
                 if (rate) {
-                    app.delete(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
+                    router.delete(endpoint.path, rateLimit({windowMs: 1000, max: rate}));
                 }
                 if (delay || (typeof delay === 'number' && delay > 0) ) {
-                    app.delete(endpoint.path, delayHandlerFactory(delay));
+                    router.delete(endpoint.path, delayHandlerFactory(delay));
                 }
                 if (!proxy) {
-                    app.delete(endpoint.path, jsonMiddleware);
-                    app.delete(endpoint.path, urlEncodedMiddleware);
-                    app.delete(endpoint.path, rawMiddleware);
+                    router.delete(endpoint.path, jsonMiddleware);
+                    router.delete(endpoint.path, urlEncodedMiddleware);
+                    router.delete(endpoint.path, rawMiddleware);
                 }
-                app.delete(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
-                app.delete(endpoint.path, failSimulationHandler);
+                router.delete(endpoint.path, responseParamsSetterFactory(status, headers, cookies));
+                router.delete(endpoint.path, failSimulationHandler);
                 if (proxy) {
-                    app.delete(endpoint.path, expressProxy(proxy));
+                    router.delete(endpoint.path, expressProxy(proxy));
                 } else if (responseFile === null) {
-                    app.delete(endpoint.path, nullHandler);
+                    router.delete(endpoint.path, nullHandler);
                 } else if (responseFile.endsWith('.json')) {
-                    app.delete(endpoint.path, jsonResponseFactory(responseFile));
+                    router.delete(endpoint.path, jsonResponseFactory(responseFile));
                 } else if (responseFile.endsWith('.txt') || responseFile.endsWith('.html')) {
-                    app.delete(endpoint.path, textResponseFactory(responseFile));
+                    router.delete(endpoint.path, textResponseFactory(responseFile));
                 }
             }
         }
     }
+    app.use(router);
 }
 
 async function main() {
     await registerEndpoints();
     server.listen(SERVER_PORT, SERVER_HOST, logServerState);
-    setInterval(logServerState, 1000);
+    if (CONSOLE_OUTPUT_ENABLED) {
+        setInterval(logServerState, 1000);
+    }
 }
 
 function shutdown() {

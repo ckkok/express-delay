@@ -1,0 +1,1845 @@
+[
+  {
+    "id": "S3100052A",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx2775",
+        "hashedAccountNumber": "47cbcf2336dccb61bb75e0af8491a0184c1b1b621bbc56a12494a127bd2ac71d",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S6005051A",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx2685",
+        "hashedAccountNumber": "f4a08450b6b0e8a5bdc8e609942ef159401a5baac7b84d8c0e4bc2786629e438",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx1735",
+        "hashedAccountNumber": "fd1c847a0fc3d51da73d0be6365445a4c162a1822fb69b9fb35d56b77f848137",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "BROADWAY IND",
+            "securityISIN": "SG1B21008464",
+            "stockCode": "B69",
+            "status": 0,
+            "blockedBalance": 100,
+            "totalBalance": 100,
+            "marketValue": 7.7,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx5057",
+        "hashedAccountNumber": "a0eaf498c36635085e035f56d15ced95dfabecf68363fec47b541da78538a905",
+        "accountType": 1,
+        "jointAccountApproval": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S6005052Z",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx0220",
+        "hashedAccountNumber": "9280ecaad64572349f4b60e10e341f84d9a5c3f3639947fedbf13eeee20f3577",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 25,
+            "securityName": "BROADWAY IND",
+            "securityISIN": "SG1B21008464",
+            "stockCode": "B69",
+            "status": 0,
+            "blockedBalance": 100,
+            "totalBalance": 100,
+            "marketValue": 7.7,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx4347",
+        "hashedAccountNumber": "04381f725f7bee756dd1e50f6f32e954c1ebaddb38f7201785e883121a37ba00",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx3599",
+        "hashedAccountNumber": "2947a5a2ddba51979869a0432c8046cbddf522eb50256cbcd3264e252f218070",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": []
+      }
+    ]
+  },
+  {
+    "id": "S7380725E",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx7622",
+        "hashedAccountNumber": "e028c33b3b0a9c4a45e674b74f64052a505368b94bb3795d770ce95e475153ff",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": []
+      },
+      {
+        "accountNumber": "xxxxxxxx2082",
+        "hashedAccountNumber": "0aa3e96e4519d60c85be583c958ed6292cf9bbf7a0e115760cdc8a75e8386752",
+        "accountType": 1,
+        "jointAccountApproval": 1,
+        "date": "042021",
+        "holdings": []
+      },
+      {
+        "accountNumber": "xxxxxxxx7907",
+        "hashedAccountNumber": "9dcf9f3012776ae5c429b742b62bac7661377dea329a5fc6f8968ffbf39bb3c0",
+        "accountType": 1,
+        "jointAccountApproval": 2,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "GOLDEN ENERGY",
+            "securityISIN": "SG1AI1000008",
+            "stockCode": "AUE",
+            "status": 0,
+            "freeBalance": 4500,
+            "totalBalance": 4500,
+            "marketValue": 792,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "BROADWAY IND",
+            "securityISIN": "SG1B21008464",
+            "stockCode": "B69",
+            "status": 0,
+            "blockedBalance": 100,
+            "totalBalance": 100,
+            "marketValue": 7.7,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S7450757C",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx6659",
+        "hashedAccountNumber": "daa9c9c58f643cb52e23c494c6adf955aedb6eef9d8b257505adcbbfd3dbd6f4",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": []
+      }
+    ]
+  },
+  {
+    "id": "S7893314C",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx0548",
+        "hashedAccountNumber": "a10c5852227776cd9d2baffa47416f859b334e5ad53f2144b6903d0a462a34fc",
+        "accountType": 1,
+        "jointAccountApproval": 2,
+        "date": "042021",
+        "holdings": []
+      }
+    ]
+  },
+  {
+    "id": "S7955237B",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx9906",
+        "hashedAccountNumber": "1176778c3104c587f88b8931285bf30d897220b074ea80b736a29be2c4cb130f",
+        "accountType": 1,
+        "jointAccountApproval": 2,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "MAGNUS ENERGY",
+            "securityISIN": "SG1AI2000007",
+            "stockCode": "41S",
+            "status": 0,
+            "freeBalance": 4500,
+            "blockedBalance": 1000,
+            "totalBalance": 5500,
+            "marketValue": 5.5,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "MAGNUS ENERGY",
+            "securityISIN": "SG1AI2000007",
+            "stockCode": "41S",
+            "status": 0,
+            "freeBalance": 4500,
+            "blockedBalance": 1000,
+            "totalBalance": 5500,
+            "marketValue": 5.5,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "GOLDEN ENERGY",
+            "securityISIN": "SG1AI1000008",
+            "stockCode": "AUE",
+            "status": 0,
+            "freeBalance": 4500,
+            "totalBalance": 4500,
+            "marketValue": 792,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx7208",
+        "hashedAccountNumber": "b5fb7ece12c191eb2ad0e1041159574fd216cd3ff73d83d48f726c9e545e92d3",
+        "accountType": 1,
+        "jointAccountApproval": 2,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "MAGNUS ENERGY",
+            "securityISIN": "SG1AI2000007",
+            "stockCode": "41S",
+            "status": 0,
+            "freeBalance": 4500,
+            "blockedBalance": 1000,
+            "totalBalance": 5500,
+            "marketValue": 5.5,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S8102792G",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx0909",
+        "hashedAccountNumber": "3b67ed29db0374b0fe9b3914a3821465e93d171ae4807498011bb5cfa5b29491",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S8243452F",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx3973",
+        "hashedAccountNumber": "ce93661555b72d8ecb91f7a1c33363cb63466a0856c7a973f9327bf53039cf79",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9153616A",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx7773",
+        "hashedAccountNumber": "9e24411b1ba58a79cb3083ba473bb7a2cbfd08c4b4f858cd842c43695ff2ff2d",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 25,
+            "securityName": "GOLDEN ENERGY",
+            "securityISIN": "SG1AI1000008",
+            "stockCode": "AUE",
+            "status": 0,
+            "freeBalance": 4500,
+            "totalBalance": 4500,
+            "marketValue": 792,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx6303",
+        "hashedAccountNumber": "d67409277c8a762fb70eadd9e71d668562ab15287d38ee0305ba013334bef843",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": []
+      },
+      {
+        "accountNumber": "xxxxxxxx0271",
+        "hashedAccountNumber": "84f167d5975f2fe961510eef0dd112cc183f038b483bc0c9b5ed89a6f5f0e1a7",
+        "accountType": 1,
+        "jointAccountApproval": 2,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9245177A",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx4659",
+        "hashedAccountNumber": "4f9ac4e9a072373560f5dcb55001bf02b415d7905e519a0d3e3a552aa70da858",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "GOLDEN ENERGY",
+            "securityISIN": "SG1AI1000008",
+            "stockCode": "AUE",
+            "status": 0,
+            "freeBalance": 4500,
+            "totalBalance": 4500,
+            "marketValue": 792,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx4448",
+        "hashedAccountNumber": "6e14668efa85f92759406058ffd126d6a6d177b54b5df617b1a95c9d71291160",
+        "accountType": 1,
+        "jointAccountApproval": 2,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "MAGNUS ENERGY",
+            "securityISIN": "SG1AI2000007",
+            "stockCode": "41S",
+            "status": 0,
+            "freeBalance": 4500,
+            "blockedBalance": 1000,
+            "totalBalance": 5500,
+            "marketValue": 5.5,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx2013",
+        "hashedAccountNumber": "d3ec78661a893d2c2077e8fc931348ee9aa6214d99231b3ceeb2b69320c2c5ad",
+        "accountType": 1,
+        "jointAccountApproval": 2,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "MAGNUS ENERGY",
+            "securityISIN": "SG1AI2000007",
+            "stockCode": "41S",
+            "status": 0,
+            "freeBalance": 4500,
+            "blockedBalance": 1000,
+            "totalBalance": 5500,
+            "marketValue": 5.5,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "BROADWAY IND",
+            "securityISIN": "SG1B21008464",
+            "stockCode": "B69",
+            "status": 0,
+            "blockedBalance": 100,
+            "totalBalance": 100,
+            "marketValue": 7.7,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9458701H",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx0838",
+        "hashedAccountNumber": "16c042e7a4d6725b20c17b01dd88ebd8593ab397888a8dfdf9a34117d8c7d024",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "GOLDEN ENERGY",
+            "securityISIN": "SG1AI1000008",
+            "stockCode": "AUE",
+            "status": 0,
+            "freeBalance": 4500,
+            "totalBalance": 4500,
+            "marketValue": 792,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx2228",
+        "hashedAccountNumber": "b91d13f6eb3e9f713fea2f67ac11e388152fdf43f7f19ee32bb735d65cdd9a25",
+        "accountType": 1,
+        "jointAccountApproval": 1,
+        "date": "042021",
+        "holdings": []
+      },
+      {
+        "accountNumber": "xxxxxxxx4506",
+        "hashedAccountNumber": "9c37d145becb2a31d8f8dfa521cacf86ca5fbeb14cd30dc48a67858f9a30f9d6",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "BROADWAY IND",
+            "securityISIN": "SG1B21008464",
+            "stockCode": "B69",
+            "status": 0,
+            "blockedBalance": 100,
+            "totalBalance": 100,
+            "marketValue": 7.7,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9640091H",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx1502",
+        "hashedAccountNumber": "445b6fcfaa9e5312e2765ebb1169a93cd956f0418ce874a722ff1ec42e543a89",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "GOLDEN ENERGY",
+            "securityISIN": "SG1AI1000008",
+            "stockCode": "AUE",
+            "status": 0,
+            "freeBalance": 4500,
+            "totalBalance": 4500,
+            "marketValue": 792,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx0980",
+        "hashedAccountNumber": "de1ae0447710000753ad54c7a89bb093ad5a6146d8e915710469b56ecf4c0b52",
+        "accountType": 1,
+        "jointAccountApproval": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9812346F",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx2862",
+        "hashedAccountNumber": "cbcea5e1fb3578ed9b6d9daa9e3d35f2f4b305659e9d02b67ae2428e5a43048f",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx3401",
+        "hashedAccountNumber": "eb2c74c39e8be4822b5307ee7e01e7275f3ad4b12b825579920250e9b278b724",
+        "accountType": 1,
+        "jointAccountApproval": 1,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "BROADWAY IND",
+            "securityISIN": "SG1B21008464",
+            "stockCode": "B69",
+            "status": 0,
+            "blockedBalance": 100,
+            "totalBalance": 100,
+            "marketValue": 7.7,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9812350D",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx8705",
+        "hashedAccountNumber": "c6eaee6eaddc9f21618aa48889208216b9bc618204f2cc88c939d76c67c8b124",
+        "accountType": 1,
+        "jointAccountApproval": 1,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9812351B",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx5581",
+        "hashedAccountNumber": "a8f38808f8c2701966aaf6276840a93a8d5898e89742ba304a11b12b81d55fdf",
+        "accountType": 1,
+        "jointAccountApproval": 1,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9812353I",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx6430",
+        "hashedAccountNumber": "3706e5352d48e4cbe8b2133899810ec8a10f339252398797708497d38cb65435",
+        "accountType": 1,
+        "jointAccountApproval": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx5010",
+        "hashedAccountNumber": "03d152b4c0c4f2c18ed5f7f3ebc58d25027b667ae7b03b0d829ea38c675cac7b",
+        "accountType": 1,
+        "jointAccountApproval": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "BROADWAY IND",
+            "securityISIN": "SG1B21008464",
+            "stockCode": "B69",
+            "status": 0,
+            "blockedBalance": 100,
+            "totalBalance": 100,
+            "marketValue": 7.7,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 25,
+            "securityName": "MAGNUS ENERGY",
+            "securityISIN": "SG1AI2000007",
+            "stockCode": "41S",
+            "status": 0,
+            "freeBalance": 4500,
+            "blockedBalance": 1000,
+            "totalBalance": 5500,
+            "marketValue": 5.5,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx8602",
+        "hashedAccountNumber": "a394a3c731943f28be0f8a6ad5782ce0f3a54234f07339205a8c9dbbd89df1d4",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 25,
+            "securityName": "BROADWAY IND",
+            "securityISIN": "SG1B21008464",
+            "stockCode": "B69",
+            "status": 0,
+            "blockedBalance": 100,
+            "totalBalance": 100,
+            "marketValue": 7.7,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9812379B",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx4330",
+        "hashedAccountNumber": "41275a19dff56b75b3dda1ec2a50ebed404bc88ce5ec5afca5e051eaf234d87f",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "GOLDEN ENERGY",
+            "securityISIN": "SG1AI1000008",
+            "stockCode": "AUE",
+            "status": 0,
+            "freeBalance": 4500,
+            "totalBalance": 4500,
+            "marketValue": 792,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "GOLDEN ENERGY",
+            "securityISIN": "SG1AI1000008",
+            "stockCode": "AUE",
+            "status": 0,
+            "freeBalance": 4500,
+            "totalBalance": 4500,
+            "marketValue": 792,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx7200",
+        "hashedAccountNumber": "28beec3af906f5f05d233a29df519be5d568a9efacc28c22910c61bf5bee78ce",
+        "accountType": 1,
+        "jointAccountApproval": 0,
+        "date": "042021",
+        "holdings": []
+      }
+    ]
+  },
+  {
+    "id": "S9812380F",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx6411",
+        "hashedAccountNumber": "2597c48c47ed5e0e4bedf7d0492247f033c37037c7ad564d23b13bd97cfd82ac",
+        "accountType": 1,
+        "jointAccountApproval": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx9488",
+        "hashedAccountNumber": "8ee000077e78a84a62abbdc9d612209ad50e9f3a357d58bcc98feee57fd30ef1",
+        "accountType": 1,
+        "jointAccountApproval": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9812381D",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx4378",
+        "hashedAccountNumber": "caab51c293f9544d1f802089eb86b9f9f73d74b6a1fcf96b84cf1d09679ce60b",
+        "accountType": 1,
+        "jointAccountApproval": 2,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "BROADWAY IND",
+            "securityISIN": "SG1B21008464",
+            "stockCode": "B69",
+            "status": 0,
+            "blockedBalance": 100,
+            "totalBalance": 100,
+            "marketValue": 7.7,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "MAGNUS ENERGY",
+            "securityISIN": "SG1AI2000007",
+            "stockCode": "41S",
+            "status": 0,
+            "freeBalance": 4500,
+            "blockedBalance": 1000,
+            "totalBalance": 5500,
+            "marketValue": 5.5,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9812382B",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx8975",
+        "hashedAccountNumber": "cfbe0f2145c0d6d1842a064c04b72774b55dd39c6d1fbae558d78d8136fa8268",
+        "accountType": 1,
+        "jointAccountApproval": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx8151",
+        "hashedAccountNumber": "df7e06d783e1c323f515e91bec35e3bb15dd07e1a2b0d65421d26721f72c4876",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "BROADWAY IND",
+            "securityISIN": "SG1B21008464",
+            "stockCode": "B69",
+            "status": 0,
+            "blockedBalance": 100,
+            "totalBalance": 100,
+            "marketValue": 7.7,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9812385G",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx2640",
+        "hashedAccountNumber": "db92a2a0d9fbd3d44bd58c8431712b37e38eb9bc739d258cf21c479aca51f8fa",
+        "accountType": 1,
+        "jointAccountApproval": 1,
+        "date": "042021",
+        "holdings": []
+      }
+    ]
+  },
+  {
+    "id": "S9812390C",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx5372",
+        "hashedAccountNumber": "1bb49bf792c9af25fd2b5465076d88c57d5444a6c204acd0920ead517147d0ac",
+        "accountType": 1,
+        "jointAccountApproval": 2,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "BROADWAY IND",
+            "securityISIN": "SG1B21008464",
+            "stockCode": "B69",
+            "status": 0,
+            "blockedBalance": 100,
+            "totalBalance": 100,
+            "marketValue": 7.7,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "MAGNUS ENERGY",
+            "securityISIN": "SG1AI2000007",
+            "stockCode": "41S",
+            "status": 0,
+            "freeBalance": 4500,
+            "blockedBalance": 1000,
+            "totalBalance": 5500,
+            "marketValue": 5.5,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9912361C",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx1586",
+        "hashedAccountNumber": "f49d3bb684307ebca3c91149b565e44bb635cd7d4782fabf417a5cb6cb0ae778",
+        "accountType": 1,
+        "jointAccountApproval": 1,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx8804",
+        "hashedAccountNumber": "774cb2966b6ad34a27f681d556d44212b3524ae0c9ad3fcba5bc92177e087368",
+        "accountType": 1,
+        "jointAccountApproval": 1,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9912363Z",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx6094",
+        "hashedAccountNumber": "da5e02030f0d92919c935ed2216c6b597c95295e003846dc053f5d36df5cf543",
+        "accountType": 1,
+        "jointAccountApproval": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "GOLDEN ENERGY",
+            "securityISIN": "SG1AI1000008",
+            "stockCode": "AUE",
+            "status": 0,
+            "freeBalance": 4500,
+            "totalBalance": 4500,
+            "marketValue": 792,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx9670",
+        "hashedAccountNumber": "83952b03a7ca0e73ff5aa728645def9b26638be7843a664586beba95d5039c8b",
+        "accountType": 1,
+        "jointAccountApproval": 1,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "GOLDEN ENERGY",
+            "securityISIN": "SG1AI1000008",
+            "stockCode": "AUE",
+            "status": 0,
+            "freeBalance": 4500,
+            "totalBalance": 4500,
+            "marketValue": 792,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "MAGNUS ENERGY",
+            "securityISIN": "SG1AI2000007",
+            "stockCode": "41S",
+            "status": 0,
+            "freeBalance": 4500,
+            "blockedBalance": 1000,
+            "totalBalance": 5500,
+            "marketValue": 5.5,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "MAGNUS ENERGY",
+            "securityISIN": "SG1AI2000007",
+            "stockCode": "41S",
+            "status": 0,
+            "freeBalance": 4500,
+            "blockedBalance": 1000,
+            "totalBalance": 5500,
+            "marketValue": 5.5,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx5032",
+        "hashedAccountNumber": "88f241e5928a65328a9dc44bde2fce279afa6110b200f63ecacbb12dd6f09d75",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9912365F",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx1126",
+        "hashedAccountNumber": "2353aa5194d2901561548290b3c78cdfc8bc478c70167ea9b33085d9b0f93523",
+        "accountType": 1,
+        "jointAccountApproval": 2,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx8344",
+        "hashedAccountNumber": "f77fd526ff9fd81caf84089995a6d5bacc7c86b88cb3593a1888643a9b5ba741",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx5097",
+        "hashedAccountNumber": "203b3b08d9dee58e4fe12d6f689eff5646b64180a8fc675af771d8e2616a96c8",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 25,
+            "securityName": "GOLDEN ENERGY",
+            "securityISIN": "SG1AI1000008",
+            "stockCode": "AUE",
+            "status": 0,
+            "freeBalance": 4500,
+            "totalBalance": 4500,
+            "marketValue": 792,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "MAGNUS ENERGY",
+            "securityISIN": "SG1AI2000007",
+            "stockCode": "41S",
+            "status": 0,
+            "freeBalance": 4500,
+            "blockedBalance": 1000,
+            "totalBalance": 5500,
+            "marketValue": 5.5,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9912367B",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx0651",
+        "hashedAccountNumber": "91383d7228684e3cfdc7ee666863480d15291fe6ec15019f92aa8858b994fcbc",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 0,
+            "securityName": "KEPCORP N240507",
+            "securityISIN": "SGXF73155974",
+            "status": 0,
+            "freeBalance": 100000,
+            "totalBalance": 100000,
+            "marketValue": 100000,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 3,
+            "bondMaturityDate": "2024/05/07",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2019/11/07",
+            "bondPARValue": 1
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx0497",
+        "hashedAccountNumber": "d959bcc5db1e75735489c1c6989a5a366d244a8904fd7de3d17da53e60f7b03d",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "MAGNUS ENERGY",
+            "securityISIN": "SG1AI2000007",
+            "stockCode": "41S",
+            "status": 0,
+            "freeBalance": 4500,
+            "blockedBalance": 1000,
+            "totalBalance": 5500,
+            "marketValue": 5.5,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9912369I",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx9919",
+        "hashedAccountNumber": "ee19067cff87fb1b5fcaf74a1ca0d94034541957b0e861aedd78cd248e2b14ea",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": []
+      },
+      {
+        "accountNumber": "xxxxxxxx8263",
+        "hashedAccountNumber": "5f212111ae4ac3893a59f99cbe68f5fba6566b61bc6410501262e03c8f7db93e",
+        "accountType": 1,
+        "jointAccountApproval": 0,
+        "date": "042021",
+        "holdings": []
+      }
+    ]
+  },
+  {
+    "id": "S9912372I",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx2201",
+        "hashedAccountNumber": "59df10e46587f0129c0fd059ea9e939f3af6b855d694c733499d73d24609e76a",
+        "accountType": 1,
+        "jointAccountApproval": 2,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "GOLDEN ENERGY",
+            "securityISIN": "SG1AI1000008",
+            "stockCode": "AUE",
+            "status": 0,
+            "freeBalance": 4500,
+            "totalBalance": 4500,
+            "marketValue": 792,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9912374E",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx6571",
+        "hashedAccountNumber": "512884b597683ab40a95a05f5e078f14027ef2fd8e9949ce319a4c4812555f54",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "MAGNUS ENERGY",
+            "securityISIN": "SG1AI2000007",
+            "stockCode": "41S",
+            "status": 0,
+            "freeBalance": 4500,
+            "blockedBalance": 1000,
+            "totalBalance": 5500,
+            "marketValue": 5.5,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx0412",
+        "hashedAccountNumber": "d067155d4e12c2dd898ef312fbe3c656d1d529647d23bb392c71e366fac23959",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "TELECHOICE INTL",
+            "securityISIN": "SG1P75919099",
+            "stockCode": "T41",
+            "status": 0,
+            "freeBalance": 600000,
+            "totalBalance": 600000,
+            "marketValue": 118200,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "GOLDEN ENERGY",
+            "securityISIN": "SG1AI1000008",
+            "stockCode": "AUE",
+            "status": 0,
+            "freeBalance": 4500,
+            "totalBalance": 4500,
+            "marketValue": 792,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "BROADWAY IND",
+            "securityISIN": "SG1B21008464",
+            "stockCode": "B69",
+            "status": 0,
+            "blockedBalance": 100,
+            "totalBalance": 100,
+            "marketValue": 7.7,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S9912375C",
+    "accounts": [
+      {
+        "accountNumber": "xxxxxxxx5511",
+        "hashedAccountNumber": "a05b6acbe64cecf39fc773f3e9622b8f3e89fe18c927c36cdd3ef6e85bb9d442",
+        "accountType": 1,
+        "jointAccountApproval": 1,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 9,
+            "securityName": "SBAPR20 GX20040X",
+            "securityISIN": "SGXZ55877732",
+            "status": 0,
+            "freeBalance": 4400,
+            "totalBalance": 4400,
+            "marketValue": 4400,
+            "marketValueCurrency": "SGD",
+            "bondCouponRate": 1.46,
+            "bondMaturityDate": "2030/04/01",
+            "bondCouponFrequency": 2,
+            "bondFirstCouponDate": "2020/10/01",
+            "bondPARValue": 1
+          },
+          {
+            "securityType": 25,
+            "securityName": "BROADWAY IND",
+            "securityISIN": "SG1B21008464",
+            "stockCode": "B69",
+            "status": 0,
+            "blockedBalance": 100,
+            "totalBalance": 100,
+            "marketValue": 7.7,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      },
+      {
+        "accountNumber": "xxxxxxxx9758",
+        "hashedAccountNumber": "6d0917140a10463c40c3d7d7c39d00794f0b61903f47ed241da34216cc3e1a01",
+        "accountType": 1,
+        "jointAccountApproval": 1,
+        "date": "042021",
+        "holdings": []
+      },
+      {
+        "accountNumber": "xxxxxxxx1939",
+        "hashedAccountNumber": "cb90039a84dba29c81f10ff15c13c829a0ecda54e72a008b8810564cda703130",
+        "accountType": 0,
+        "date": "042021",
+        "holdings": [
+          {
+            "securityType": 25,
+            "securityName": "GOLDEN ENERGY",
+            "securityISIN": "SG1AI1000008",
+            "stockCode": "AUE",
+            "status": 0,
+            "freeBalance": 4500,
+            "totalBalance": 4500,
+            "marketValue": 792,
+            "marketValueCurrency": "SGD"
+          },
+          {
+            "securityType": 25,
+            "securityName": "BROADWAY IND",
+            "securityISIN": "SG1B21008464",
+            "stockCode": "B69",
+            "status": 0,
+            "blockedBalance": 100,
+            "totalBalance": 100,
+            "marketValue": 7.7,
+            "marketValueCurrency": "SGD"
+          }
+        ]
+      }
+    ]
+  }
+]

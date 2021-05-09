@@ -1,0 +1,16 @@
+{
+    // some comment
+    "consoleAccess": false,
+    "consoleOutput": false,
+    "useProxy": false,
+    "serverPort": 9000,
+    "serverHost": "0.0.0.0",
+    "dashboardPath": "/__dashboard",
+    "isAliveEndpoint": "/__status",
+    "endpoints": [
+        {
+            "path": "/v1/securitiesAccount/balance/monthEnd/:idType/:id/:issuingCountry",
+            "response": "cdpAccountBalance.js"
+        }
+    ]
+}

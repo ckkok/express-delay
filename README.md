@@ -6,6 +6,10 @@ Do you have a lousy backend third-party service that you need to mock in your te
 
 Requires NodeJS v12.4.0 and above due to its usage of ES6 modules and contemporary JS language features.
 
+## Some Design Decisions
+
+We use [JSON5](https://json5.org/). The global JSON object is replaced by JSON5, so JSON.parse and JSON.stringify are automatically aware of JSON5 extensions. This is backwards compatible with existing JSON specifications. The main use case here is config documentation in the config.json5 file itself.
+
 ## Installation
 
 Just run `npm install`. 
