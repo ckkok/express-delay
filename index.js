@@ -14,7 +14,7 @@ globalThis.JSON = JSON5;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const config = JSON.parse(fs.readFileSync("config.json5", "utf-8"));
+const config = JSON.parse(fs.readFileSync(path.join(__dirname, "config.json5"), "utf-8"));
 
 if (config.useProxy) {
     globalAgent.bootstrap();
