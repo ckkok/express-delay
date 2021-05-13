@@ -11,6 +11,10 @@
         {
             "path": "/v1/securitiesAccount/balance/monthEnd/:idType/:id/:issuingCountry",
             "response": "cdpAccountBalance.js"
+        },
+        {
+            "path": "/auth/v1/authorize",
+            "response": "tempRedirect.js"
         }
     ]
 }
