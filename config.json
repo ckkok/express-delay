@@ -26,6 +26,10 @@
             "path": "/todos/:id",
             "delay": 2000,
             "proxy": "jsonplaceholder.typicode.com"
+        },
+        {
+            "path": "/internal/scheme-codes/:schemeCode/sub-codes/:schemeSubCode/validate",
+            "response": "schemeSubCodeValid.json"
         }
     ]
 }
