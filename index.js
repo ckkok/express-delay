@@ -2,19 +2,18 @@ import http from 'http';
 import fs from 'fs';
 import path from 'path';
 import cors from 'cors';
-import JSON5 from 'json5';
-import express from 'express';
+import express, { text } from 'express';
 import expressProxy from 'express-http-proxy';
 import rateLimit from 'express-rate-limit';
 import globalAgent from 'global-agent';
+import { DateTime } from 'luxon';
+import { v4 as uuidv4 } from 'uuid';
 import { fileURLToPath, pathToFileURL } from 'url';
-
-globalThis.JSON = JSON5;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const config = JSON.parse(fs.readFileSync(path.join(__dirname, "config.json5"), "utf-8"));
+const config = JSON.parse(fs.readFileSync(path.join(__dirname, "config.json"), "utf-8"));
 
 if (config.useProxy) {
     globalAgent.bootstrap();
@@ -185,9 +184,20 @@ const delayHandlerFactory = delay => {
     throw new Error('Invalid delay specified. Expected either a number or { min: number, max: number}. Received: ' + delay);
 }
 
+const textReplacer = text => {
+    let result = text;
+    result = result.replaceAll('${currentUtcDateTime}', DateTime.utc().toISO().toString());
+    result = result.replaceAll('${uuidRandom}', uuidv4())
+    return result;
+}
+
 const jsonResponseFactory = jsonResponseFile => {
-    const response = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'responses', jsonResponseFile)));
-    return (req, res) => res.json(response);
+    return (req, res) => {
+        const rawData = fs.readFileSync(path.resolve(__dirname, 'responses', jsonResponseFile), 'utf-8');
+        const textReplacedData = textReplacer(rawData);
+        const response = JSON.parse(textReplacedData);
+        res.json(response);
+    }
 }
 
 const textResponseFactory = textResponseFile => {

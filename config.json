@@ -1,0 +1,31 @@
+{
+    "consoleAccess": true,
+    "consoleOutput": true,
+    "useProxy": false,
+    "serverPort": 9000,
+    "serverHost": "0.0.0.0",
+    "dashboardPath": "/__dashboard",
+    "isAliveEndpoint": "/__status",
+    "endpoints": [
+        {
+            "path": "/example",
+            "delay": { "min": 500, "max": 2000 },
+            "response": "example.js"
+        },
+        {
+            "path": "/example-redirect",
+            "delay": 1000,
+            "response": "exampleRedirect.js"
+        },
+        {
+            "path": "/example-response",
+            "delay": 2000,
+            "response": "exampleResponse.json"
+        },
+        {
+            "path": "/todos/:id",
+            "delay": 2000,
+            "proxy": "jsonplaceholder.typicode.com"
+        }
+    ]
+}

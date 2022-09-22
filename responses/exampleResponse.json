@@ -1,0 +1,8 @@
+{
+  "meta": {
+    "requestId": "${uuidRandom}",
+    "timestamp": "${currentUtcDateTime}",
+    "duration": 99
+  },
+  "data": null
+}

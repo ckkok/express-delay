@@ -4,11 +4,11 @@ Do you have a lousy backend third-party service that you need to mock in your te
 
 ## Requirements
 
-Requires NodeJS v12.4.0 and above due to its usage of ES6 modules and contemporary JS language features.
+Requires NodeJS v16.0.0 and above due to its usage of ES6 modules and contemporary JS language features.
 
 ## Some Design Decisions
 
-We use [JSON5](https://json5.org/). The global JSON object is replaced by JSON5, so JSON.parse and JSON.stringify are automatically aware of JSON5 extensions. This is backwards compatible with existing JSON specifications. The main use case here is config documentation in the config.json5 file itself.
+- 
 
 ## Installation
 
@@ -19,7 +19,7 @@ Just run `npm install`.
 The following environment variables are used.
 
 - `HOST`: Host for the server to listen on. Default: 0.0.0.0 (all network interfaces)
-- `PORT`: Port for the server to listen on. Default: 3000
+- `PORT`: Port for the server to listen on. Default: 9000
 - `HTTP_PROXY`: Proxy for outgoing http requests
 
 Edit `config.json` and add endpoints to the server. They will be registered at startup. The following options are available for each endpoint.
